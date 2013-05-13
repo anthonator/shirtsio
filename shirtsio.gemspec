@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Shirtsio::VERSION
   spec.authors       = ["Anthony Smith"]
   spec.email         = ["anthony@sticksnleaves.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{A shirts.io API wrapper written in Ruby}
+  spec.summary       = %q{shirts.io REST API client library for Ruby}
+  spec.homepage      = "https://github.com/anthonator/shirtsio"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
