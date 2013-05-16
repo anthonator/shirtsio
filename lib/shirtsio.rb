@@ -1,6 +1,6 @@
 require 'faraday'
+require 'hashie'
 require 'multi_json'
-require 'singleton'
 
 require 'shirtsio/error'
 require 'shirtsio/utils'
@@ -9,6 +9,9 @@ require 'shirtsio/configuration'
 require 'shirtsio/connection'
 require 'shirtsio/request'
 require 'shirtsio/api'
+require 'shirtsio/endpoint'
+
+require 'shirtsio/product'
 
 module Shirtsio
   extend Configuration
