@@ -27,8 +27,7 @@ module Shirtsio
       else
         # The API is returning the "result" encoded as a string rather than
         # object notation so it requires a second pass of the JSON parser
-        result = Shirtsio::Utils.parse_json(response.body)
-        result = Shirtsio::Utils.parse_json(result[:result])
+        result = Shirtsio::Utils.parse_json(response.body)[:result]
       end
 
       result
