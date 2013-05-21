@@ -66,7 +66,7 @@ class Shirtsio::DSL
     def extract_index(method)
       return method if @dsl.include?(method)
       @dsl.each do |i|
-        if i.kind_of?(Hash) && i[method].present?
+        if i.kind_of?(Hash) && !i[method].nil?
           return i[method]
         end
       end

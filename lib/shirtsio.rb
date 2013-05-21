@@ -9,9 +9,11 @@ require 'shirtsio/configuration'
 require 'shirtsio/connection'
 require 'shirtsio/request'
 require 'shirtsio/api'
+require 'shirtsio/dsl'
 require 'shirtsio/endpoint'
 
 require 'shirtsio/product'
+require 'shirtsio/quote'
 
 module Shirtsio
   extend Configuration
