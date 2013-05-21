@@ -1,4 +1,7 @@
 class Shirtsio::DSL
+  SIZES = [:xxsml, :xsml, :sml, :med, :lrg, :xlg, :xxl, :xxxl, :xxxxl, :xxxxxl, :xxxxxxl]
+  private_constant :SIZES
+
   QUOTE = [
     :print_type,
     :personalization,
@@ -9,13 +12,53 @@ class Shirtsio::DSL
     :garment => [
       :product_id,
       :color,
-      :sizes => [:xxsml, :xsml, :sml, :med, :lrg, :xlg, :xxl, :xxxl, :xxxxl, :xxxxxl, :xxxxxxl]
+      :sizes => SIZES
     ],
     :print => [
       :front => [:color_count, :colors],
       :left => [:color_count, :colors],
       :right => [:color_count, :colors],
       :back => [:color_count, :colors]
+    ]
+  ]
+
+  ORDER = [
+    :test,
+    :price,
+    :print_type,
+    :extra_screens,
+    :ship_type,
+    :packing_slip,
+    :garment => [
+      :product_id,
+      :color,
+      :sizes => SIZES
+    ],
+    :print => [
+      :front => [:artwork, :proof, :color_count, :colors, :dimensions, :placement],
+      :left => [:artwork, :proof, :color_count, :colors, :dimensions, :placement],
+      :right => [:artwork, :proof, :color_count, :colors, :dimensions, :placement],
+      :back => [:artwork, :proof, :color_count, :colors, :dimensions, :placement]
+    ],
+    :personalization => [
+      :size,
+      :batch,
+      :number,
+      :number_size,
+      :name,
+      :name_size
+    ],
+    :addresses => [
+      :name,
+      :company,
+      :address,
+      :address2,
+      :city,
+      :state,
+      :zipcode,
+      :country,
+      :batch,
+      :sizes => SIZES,
     ]
   ]
 
@@ -56,10 +99,6 @@ class Shirtsio::DSL
 
     def to_hash
       @params
-    end
-
-    def to_query
-      @params.to_query
     end
 
     private
