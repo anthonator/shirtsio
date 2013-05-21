@@ -5,6 +5,9 @@ class Shirtsio::Quote < Shirtsio::Endpoint
   # This method specifies a DSL for building the parameters necessary for
   # retrieving a quote.
   #
+  # @note See documentation provided by shirts.io for a thorough
+  # description of all parameters supported by this endpoint.
+  #
   # Example:
   #
   #  Shirtsio::Quote.create do |quote|
@@ -23,6 +26,8 @@ class Shirtsio::Quote < Shirtsio::Endpoint
   #    end
   #    quote.ship_type 'Rush'
   #  end
+  #
+  # @see https://www.shirts.io/docs/quote_reference/
   def self.create(&block)
     query = Shirtsio::DSL::QueryBuilder.new(Shirtsio::DSL::QUOTE, :garment, &block).to_hash
     new(Shirtsio.get('/quote/', query))
