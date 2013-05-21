@@ -2,6 +2,7 @@ require 'faraday'
 require 'hashie'
 require 'multi_json'
 
+require 'shirtsio/version'
 require 'shirtsio/error'
 require 'shirtsio/utils'
 
