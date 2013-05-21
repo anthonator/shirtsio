@@ -1,3 +1,5 @@
+# Provides specifications, inventory data, and pictures of all products
+# available before printing.
 class Shirtsio::Product < Shirtsio::Endpoint
   # Get product catalog information for a specific product id.
   #
