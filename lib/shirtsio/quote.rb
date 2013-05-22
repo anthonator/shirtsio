@@ -5,8 +5,7 @@ class Shirtsio::Quote < Shirtsio::Endpoint
   # This method specifies a DSL for building the parameters necessary for
   # retrieving a quote.
   #
-  # @note See documentation provided by shirts.io for a thorough
-  # description of all parameters supported by this endpoint.
+  # @note See documentation provided by shirts.io for a thorough description of all parameters supported by this endpoint.
   #
   # Example:
   #
