@@ -60,6 +60,32 @@ products = categories[0].products
 product = products[0].full_product
 ```
 
+## Quote API
+
+```ruby
+# Assembling the parameters necessary to generate a quote is mess business. Luckily there's a DSL for that.
+quote = Shirtsio::Quote.create do |quote|
+  quote.print_type 'Digital Print'
+  quote.garment do |garment|
+    garment.product_id 3
+    garment.color 'Black'
+    garment.sizes do |size|
+      size.med 1
+    end
+  end
+  quote.print do |print|
+    print.front do |front|
+      front.color_count 1
+      front.colors ['Black']
+    end
+    print.back do |back|
+      back.color_count 1
+      back.colors ['Black']
+    end
+  end
+end
+```
+
 ## Contributing
 
 1. Fork it
