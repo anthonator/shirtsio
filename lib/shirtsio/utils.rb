@@ -3,12 +3,13 @@ module Shirtsio
   module Utils
     private
     def self.handle_api_error(response)
-      result = parse_json(response.body)[:result]
+      result = parse_json(response.body)
       error = case response.status
       when 400 then BadRequest.new
       else Error.new
       end
-      error.description = result
+      error.result = result[:result]
+      error.error = result[:error]
       raise error
     end
 
