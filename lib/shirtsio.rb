@@ -16,6 +16,7 @@ require 'shirtsio/endpoint'
 require 'shirtsio/product'
 require 'shirtsio/quote'
 require 'shirtsio/order'
+require 'shirtsio/status'
 
 module Shirtsio
   extend Configuration
