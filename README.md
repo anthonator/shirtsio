@@ -63,7 +63,8 @@ product = products[0].full_product
 ## Quote API
 
 ```ruby
-# Assembling the parameters necessary to generate a quote is mess business. Luckily there's a DSL for that.
+# Assembling the parameters necessary to generate a quote is mess business. 
+# Luckily there's a DSL for that.
 quote = Shirtsio::Quote.create do |quote|
   quote.print_type 'Digital Print'
   quote.garment do |garment|
