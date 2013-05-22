@@ -40,8 +40,24 @@ BAM! Print some shirts!
 
 ```ruby
 Shirtsio::Order.create do |order|
-...
+  ...
 end
+```
+
+## Product API
+
+```ruby
+# Return details about a specific product
+product = Shirtsio::Product.find(3)
+
+# Return a list of categories
+categories = Shirtsio::Product::Category.list
+
+# Return a list of products for a specific category
+products = categories[0].products
+
+# Since shirts.io doesn't return full product data when requesting from a category, return it now
+product = products[0].full_product
 ```
 
 ## Contributing
