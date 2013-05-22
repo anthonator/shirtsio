@@ -22,9 +22,27 @@ Or install it yourself as:
 
     $ gem install shirtsio
 
-## Usage
+## Quick Start Guide
 
-TODO: Write usage instructions here
+Before you can start ordering some sweet shirts you'll need to tell shirts.io who you are.
+
+Grab your super secret API key from the [shirts.io dashboard](https://www.shirts.io/accounts/dashboard/).
+
+Sprinkle some pixie-dust...
+
+```ruby
+Shirtsio.configure do |config|
+  config.api_key = YOUR_API_KEY
+end
+```
+
+BAM! Print some shirts!
+
+```ruby
+Shirtsio::Order.create do |order|
+...
+end
+```
 
 ## Contributing
 
