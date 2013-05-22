@@ -137,6 +137,23 @@ order = Shirtsio::Order.create do |order|
 end
 ```
 
+## Status API
+```ruby
+# Get an order's status
+status = Shirtsio::Status.find(1234)
+
+# Register a status webhook
+Shirtsio::Status::Webhook.create('http://www.example.com') #returns true or false
+
+# List webhooks
+webhooks = Shirtsio::Status::Webhook.list
+
+# Delete a webhook
+Shirtsio::Status::Webhook.delete('http://www.example.com')
+# or
+webhooks[0].delete
+```
+
 ## Contributing
 
 1. Fork it
