@@ -1,6 +1,42 @@
 require 'spec_helper'
 
 describe Shirtsio::DSL::QueryBuilder do
+  it "should build a proper quote query" do
+    query = (Shirtsio::DSL::QueryBuilder.new(Shirtsio::DSL::QUOTE, :garment) do |query|
+      query.garment do |garment|
+        garment.product_id 1
+        garment.color 'Black'
+        garment.sizes do |size|
+          size.med 1
+        end
+      end
+      query.print do |print|
+        print.front do |front|
+          front.color_count 1
+          front.colors ['Black']
+        end
+      end
+      query.print_type 'Digital Print'
+      query.personalization 'Bob'
+      query.address_count 1
+      query.extra_screens 1
+      query.ship_type 'Standard'
+      query.international_garment_count 1
+    end).to_hash
+    CGI::unescape(Faraday::Utils.build_nested_query(query)).should == CGI::unescape(Faraday::Utils.build_nested_query({
+      :garment => { 0 => { :product_id => 1, :color => 'Black', :sizes => { :med => 1 } } },
+      :print => {
+        :front => { :color_count => 1, :colors => { 0 => 'Black' } }
+      },
+      :print_type => 'Digital Print',
+      :personalization => 'Bob',
+      :address_count => 1,
+      :extra_screens => 1,
+      :ship_type => 'Standard',
+      :international_garment_count => 1
+    }))
+  end
+
   it "should build a proper order query" do
     query = (Shirtsio::DSL::QueryBuilder.new(Shirtsio::DSL::ORDER, [:garment, :addresses, :personalization]) do |query|
       query.test true
