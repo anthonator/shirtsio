@@ -6,7 +6,7 @@ A Ruby wrapper around the shirts.io API
 
 You can view detailed documentation of this library at http://rdoc.info/github/anthonator/shirtsio/frames. We try to make sure that our documentation is up-to-date and thorough. However, we do recommend keeping the [shirts.io API documentation](https://www.shirts.io/docs/overview/) handy.
 
-if you find any discrepency in our documentation please [file an issue](https://github.com/anthonator/shirtsio/issues).
+If you find any discrepency in our documentation please [file an issue](https://github.com/anthonator/shirtsio/issues).
 
 ## Installation
 
