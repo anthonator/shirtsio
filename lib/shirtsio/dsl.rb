@@ -58,7 +58,7 @@ class Shirtsio::DSL
       :zipcode,
       :country,
       :batch,
-      :sizes => SIZES,
+      :sizes => SIZES
     ]
   ]
 
