@@ -4,6 +4,10 @@ module Shirtsio
       request(:get, path, options, headers, raw)
     end
 
+    def post(path, options = {}, headers = {}, raw = false)
+      request(:post, path, options, headers, raw)
+    end
+
     private
     # Perform an HTTP request
     def request(method, path, options, headers, raw)
@@ -12,12 +16,16 @@ module Shirtsio
       })
 
       options.merge!({
-        :api_key => api_key,
-        :test_mode => test_mode
+        :api_key => api_key
       })
 
       response = connection.send(method) do |request|
-        request.url "#{endpoint}#{path}", options
+        if method == :get
+          request.url "#{endpoint}#{path}", options
+        else
+          request.url "#{endpoint}#{path}"
+          request.body = options
+        end
         request.headers = headers
       end
       Shirtsio::Utils.handle_api_error(response) if response.status != 200

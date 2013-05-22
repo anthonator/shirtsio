@@ -3,7 +3,6 @@ module Shirtsio
   module Configuration
     VALID_OPTIONS_KEYS = [
       :api_key,
-      :test_mode,
       :endpoint,
       :proxy,
       :user_agent
@@ -11,9 +10,6 @@ module Shirtsio
 
     # By default, don't set API key.
     DEFAULT_API_KEY = nil.freeze
-
-    # By default, set test mode to false
-    DEFAULT_TEST_MODE = false.freeze
 
     # The endpoint that will be used to authorize a user if none is set.
     DEFAULT_ENDPOINT = 'https://www.shirts.io/api/v1'.freeze
@@ -49,7 +45,6 @@ module Shirtsio
     # Reset all configuration options to default.
     def reset
       self.api_key = DEFAULT_API_KEY
-      self.test_mode = DEFAULT_TEST_MODE
       self.endpoint = DEFAULT_ENDPOINT
       self.proxy = DEFAULT_PROXY
       self.user_agent = DEFAULT_USER_AGENT
