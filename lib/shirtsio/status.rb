@@ -25,4 +25,48 @@ class Shirtsio::Status < Shirtsio::Endpoint
   def self.find(id)
     new(Shirtsio.get("/status/#{id}"))
   end
+
+  # Provides the ability to have status updates pushed to a URL.
+  class Webhook < Shirtsio::Endpoint
+    # Delete the current webhook.
+    #
+    # @return [Boolean] true if successful; otherwise false;
+    # @see https://www.shirts.io/docs/status_reference/#webhooks_section
+    def delete
+      Webhook.delete(url)
+    end
+
+    # Register a new webhook URL.
+    #
+    # @param [String] url URL status updates will be pushed to 
+    # @return [Boolean] true if successful; otherwise false
+    # @see https://www.shirts.io/docs/status_reference/#webhooks_section
+    def self.create(url)
+      Shirtsio.post('/webhooks/register/', { :url => url })[:success]
+    end
+
+    # Retrieve all registered webhook URLs.
+    #
+    # @return [Shirtsio::Status::Webhook] a list of registered webhook URLs
+    # @see https://www.shirts.io/docs/status_reference/#webhooks_section
+    def self.list
+      webhooks = []
+      response = new(Shirtsio.get('/webhooks/list/'))
+      if response.respond_to?(:listener_url)
+        response.listener_url.each do |webhook|
+          webhooks << new({ :url => webhook })
+        end
+      end
+      webhooks
+    end
+
+    # Delete a registered webhook URL.
+    #
+    # @param [String] url URL of webhook to be removed
+    # @return [Boolean] true if successful; otherwise false
+    # @see https://www.shirts.io/docs/status_reference/#webhooks_section
+    def self.delete(url)
+      Shirtsio.post('/webhooks/delete/', { :url => url })[:success]
+    end
+  end
 end
