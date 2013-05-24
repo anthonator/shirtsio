@@ -32,4 +32,11 @@ describe Shirtsio::DSL::QueryBuilder do
     end.to_hash)
     URI::unescape(query).should == 'a_method[b_method][0]=value'
   end
+
+  it "should translate File to Faraday::UploadIO" do
+    query = Shirtsio::DSL::QueryBuilder.new([:a_method]) do |builder|
+      builder.a_method File.new(Tempfile.new('foo.eps').path)
+    end.to_hash
+    query[:a_method].class.should == Faraday::UploadIO
+  end
 end
