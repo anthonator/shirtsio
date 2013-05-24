@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Shirtsio::Product do
+describe Shirtsio::Product, :skip_if_travis => true do
   it "should find a specific product" do
     product = Shirtsio::Product.find(1)
     product.class.should == Shirtsio::Product
