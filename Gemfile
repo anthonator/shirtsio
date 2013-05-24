@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in shirtsio.gemspec
 gemspec
 
+platforms :rbx do
+  gem 'json'
+end
+
 group :development do
   gem 'bundler', '~> 1.3'
   gem 'rake'
