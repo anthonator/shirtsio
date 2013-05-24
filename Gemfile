@@ -10,6 +10,5 @@ group :development do
 end
 
 group :test do
-  gem 'activesupport'
   gem 'rspec'
 end
