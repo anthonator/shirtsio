@@ -20,12 +20,8 @@ module Shirtsio
       })
 
       response = connection.send(method) do |request|
-        if method == :get
-          request.url "#{endpoint}#{path}", options
-        else
-          request.url "#{endpoint}#{path}"
-          request.body = options
-        end
+        request.url "#{endpoint}#{path}", options
+        request.body = options
         request.headers = headers
       end
       Shirtsio::Utils.handle_api_error(response) if response.status != 200
