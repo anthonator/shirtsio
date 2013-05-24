@@ -1,5 +1,9 @@
+require 'simplecov'
+SimpleCov.start
+
 ENV['RAILS_ENV'] = 'test'
 
+require 'tempfile'
 require 'shirtsio'
 
 # Require supporting ruby files with custom matchers and macros, etc,
