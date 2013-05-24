@@ -105,8 +105,8 @@ order = Shirtsio::Order.create do |order|
   end
   order.print do |print|
     print.front do |front|
-      front.artwork ''
-      front.proof ''
+      front.artwork File.new('/path/to/file.png')
+      front.proof File.new('/path/to/file.jpg')
       front.color_count 1
       front.colors ['Black']
       front.dimensions '5.0 inches wide'
