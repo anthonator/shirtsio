@@ -1,4 +1,4 @@
-# Shirtsio
+# Shirtsio [![endorse](http://api.coderwall.com/anthonator/endorsecount.png)](http://coderwall.com/anthonator)
 
 A Ruby wrapper around the shirts.io API
 
