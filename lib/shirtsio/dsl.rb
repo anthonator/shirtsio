@@ -80,6 +80,8 @@ class Shirtsio::DSL
           args[0].each_with_index do |v,i|
             params[method] = { i => v }
           end
+        elsif args[0].kind_of?(File)
+          params[method] = Faraday::UploadIO.new(args[0].path, Shirtsio::Utils.mime_type(args[0].path))
         else
           params[method] = args[0]
         end
