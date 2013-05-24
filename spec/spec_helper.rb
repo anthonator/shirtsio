@@ -6,7 +6,7 @@ require 'simplecov'
 SimpleCov.start do
   if Support::Travis::travis?
     add_filter do |source_file|
-      ['order_spec.rb', 'order.rb', 'status_spec.rb', 'status.rb'].include?(File.basename(source_file.filename))
+      ['product_spec.rb', 'product.rb', 'order_spec.rb', 'order.rb', 'status_spec.rb', 'status.rb'].include?(File.basename(source_file.filename))
     end
   end
 end
