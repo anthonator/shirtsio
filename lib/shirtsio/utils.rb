@@ -16,5 +16,9 @@ module Shirtsio
     def self.parse_json(json)
       MultiJson.load(json, :symbolize_keys => true)
     end
+
+    def self.build_query(hash)
+      Faraday::Utils.build_nested_query(hash)
+    end
   end
 end
