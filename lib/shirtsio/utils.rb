@@ -6,6 +6,8 @@ module Shirtsio
       result = parse_json(response.body)
       error = case response.status
       when 400 then BadRequest.new
+      when 401 then Unauthorized.new
+      when 402 then RequestFailed.new
       else Error.new
       end
       error.result = result[:result]
