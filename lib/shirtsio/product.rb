@@ -29,6 +29,7 @@ class Shirtsio::Product < Shirtsio::Endpoint
       response.each do |product|
         products << Shirtsio::Product::Simple.new(product)
       end
+      products
     end
 
     # Get a list of all available product categories.
