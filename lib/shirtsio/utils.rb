@@ -20,5 +20,18 @@ module Shirtsio
     def self.build_query(hash)
       Faraday::Utils.build_nested_query(hash)
     end
+
+    def self.mime_type(path)
+      case path
+      when /\.jpe?g/i
+        'image/jpeg'
+      when /\.eps$/i
+        'image/eps'
+      when /\.png$/i
+        'image/png'
+      else
+        'application/octet-stream'
+      end
+    end
   end
 end
