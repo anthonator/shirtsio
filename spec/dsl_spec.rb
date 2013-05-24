@@ -35,7 +35,7 @@ describe Shirtsio::DSL::QueryBuilder do
 
   it "should translate File to Faraday::UploadIO" do
     query = Shirtsio::DSL::QueryBuilder.new([:a_method]) do |builder|
-      builder.a_method File.new(Tempfile.new('foo.eps').path)
+      builder.a_method File.new(File.expand_path('support/ruby.png', File.dirname(__FILE__)))
     end.to_hash
     query[:a_method].class.should == Faraday::UploadIO
   end
