@@ -1,6 +1,5 @@
 class Shirtsio::DSL
   SIZES = [:xxsml, :xsml, :sml, :med, :lrg, :xlg, :xxl, :xxxl, :xxxxl, :xxxxxl, :xxxxxxl]
-  private_constant :SIZES
 
   QUOTE = [
     :print_type,
