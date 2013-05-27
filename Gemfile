@@ -9,6 +9,7 @@ end
 
 group :development do
   gem 'bundler'
+  gem 'coveralls', :require => false
   gem 'rake'
   gem 'yard'
 end
