@@ -2,7 +2,7 @@
 
 A Ruby wrapper around the shirts.io API
 
-[![Build Status](https://travis-ci.org/anthonator/shirtsio.png?branch=master)](https://travis-ci.org/anthonator/shirtsio)
+[![Build Status](https://travis-ci.org/anthonator/shirtsio.png?branch=master)](https://travis-ci.org/anthonator/shirtsio) [![Code Climate](https://codeclimate.com/github/anthonator/shirtsio.png)](https://codeclimate.com/github/anthonator/shirtsio)
 
 ## Documentation
 
