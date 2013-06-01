@@ -4,7 +4,6 @@ A Ruby wrapper around the shirts.io API
 
 [![Build Status](https://travis-ci.org/anthonator/shirtsio.png?branch=master)](https://travis-ci.org/anthonator/shirtsio) [![Code Climate](https://codeclimate.com/github/anthonator/shirtsio.png)](https://codeclimate.com/github/anthonator/shirtsio) [![Coverage Status](https://coveralls.io/repos/anthonator/shirtsio/badge.png?branch=master)](https://coveralls.io/r/anthonator/shirtsio?branch=master)
 
-
 ## Documentation
 
 You can view detailed documentation of this library at http://rdoc.info/github/anthonator/shirtsio/frames. We try to make sure that our documentation is up-to-date and thorough. However, we do recommend keeping the [shirts.io API documentation](https://www.shirts.io/docs/overview/) handy.
@@ -133,7 +132,7 @@ order = Shirtsio::Order.create do |order|
     address.state 'IN'
     address.country 'US'
     address.batch 1
-    address.sizes do |size}
+    address.sizes do |size|
       size.med 1
     end
   end
