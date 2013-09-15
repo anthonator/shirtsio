@@ -168,6 +168,6 @@ webhooks[0].delete
 
 [![Sticksnleaves](http://sticksnleaves-wordpress.herokuapp.com/wp-content/themes/sticksnleaves/images/snl-logo-116x116.png)](http://www.sticksnleaves.com)
 
-Dirigible is maintained and funded by [Sticksnleaves](http://www.sticksnleaves.com)
+Shirtsio is maintained and funded by [Sticksnleaves](http://www.sticksnleaves.com)
 
 Thanks to all of our [contributors](https://github.com/anthonator/dirigible/graphs/contributors)
