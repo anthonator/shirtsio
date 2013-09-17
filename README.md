@@ -170,4 +170,4 @@ webhooks[0].delete
 
 Shirtsio is maintained and funded by [Sticksnleaves](http://www.sticksnleaves.com)
 
-Thanks to all of our [contributors](https://github.com/anthonator/dirigible/graphs/contributors)
+Thanks to all of our [contributors](https://github.com/anthonator/shirtsio/graphs/contributors)
