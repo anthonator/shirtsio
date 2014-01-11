@@ -11,13 +11,14 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 SimpleCov.start do
   if Support::Travis::travis?
     add_filter do |source_file|
-      ['product_spec.rb', 'product.rb', 'order_spec.rb', 'order.rb', 'status_spec.rb', 'status.rb'].include?(File.basename(source_file.filename))
+      ['product_spec.rb', 'product.rb', 'order_spec.rb', 'order.rb', 'status_spec.rb', 'status.rb', 'quote_spec.rb', 'quote.rb'].include?(File.basename(source_file.filename))
     end
   end
 end
 
 ENV['RAILS_ENV'] = 'test'
 
+require 'webmock/rspec'
 require 'tempfile'
 require 'shirtsio'
 
