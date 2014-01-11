@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Shirtsio::Quote do
+describe Shirtsio::Quote, :skip_if_travis => true do
   it "should retrieve a quote" do
     quote = Shirtsio::Quote.create do |quote|
       quote.print_type 'Digital Print'
