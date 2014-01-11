@@ -16,6 +16,7 @@ group :development do
   gem 'bundler'
   gem 'coveralls', :require => false
   gem 'rake'
+  gem 'webmock'
   gem 'yard'
 end
 
